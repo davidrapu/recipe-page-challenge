@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+:root {
+  --stone100: hsl(30, 54%, 90%);
+  --stone150: hsl(30, 18%, 87%);
+  --stone600: hsl(30, 10%, 34%);
+  --stone900: hsl(24, 5%, 18%);
+
+  --brown800: hsl(14, 45%, 36%);
+
+  --rose800: hsl(332, 51%, 32%);
+  --rose50: hsl(330, 100%, 98%);
+
+  --background: hsl(0, 0%, 100%);
+}
+body {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  height: 100vh;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.7em;
+  width: 100%;
+  font-size: 16px;
+  /* background-color: var(--rose50); */
+  background-color: var(--background);
+}
+main img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+main .info {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 20px;
+  row-gap: 1em;
+  p {
+    margin: 0;
+  }
+}
+.info h1 {
+  font-size: 2em;
+  font-family: "Young Serif", serif;
+  line-height: 1.1em;
+  margin: 0;
+  font-weight: 500;
+  color: var(--stone900);
+}
+.info .intro-description {
+  color: var(--stone600);
+  font-weight: 500;
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+.info .preparation {
+  background-color: var(--rose50);
+  padding: calc(1em + 5px);
+  height: auto;
+  border-radius: 1em;
+}
+.preparation h3{
+    margin: 0;
+    /* font-size: 16px; */
+    color: var(--rose800);
+    font-weight: 600;
+}
+.preparation ul{
+    color: var(--stone600);
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.preparation li{
+    width: 12em;
+    padding-left: 15px;
+    align-content: center;
+}
+.preparation span{
+    font-weight: 600;
+}
+.preparation li::marker{
+    color: var(--rose800);
+}
