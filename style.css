@@ -3,7 +3,7 @@
 :root {
   --stone100: hsl(30, 54%, 90%);
   --stone150: hsl(30, 18%, 87%);
-  --stone600: hsl(30, 10%, 34%);
+  --textcolor: hsl(30, 10%, 34%);
   --stone900: hsl(24, 5%, 18%);
 
   --brown800: hsl(14, 45%, 36%);
@@ -18,36 +18,39 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
+  padding: 1em 1em 2em;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  row-gap: 2em;
+  align-items: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: var(--stone100);
 }
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 1.7em;
-  width: 100%;
-  font-size: 16px;
-  /* background-color: var(--rose50); */
-  background-color: var(--background);
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.7em;
+    border-radius: 1em;
+    background-color: var(--background);
 }
 main img {
-  width: 100%;
-  height: auto;
-  margin: 0;
+  width: 90%;
+  margin-top: 2em;
+  border-radius: 1em;
 }
 main .info {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   padding: 0 20px;
-  row-gap: 1em;
+  row-gap: 1.7em;
   p {
     margin: 0;
   }
@@ -61,7 +64,7 @@ main .info {
   color: var(--stone900);
 }
 .info .intro-description {
-  color: var(--stone600);
+  color: var(--textcolor);
   font-weight: 500;
   font-size: 0.8em;
   line-height: 1.5em;
@@ -72,26 +75,153 @@ main .info {
   height: auto;
   border-radius: 1em;
 }
-.preparation h3{
+.preparation h2{
+    font-size: 1.3em;
     margin: 0;
-    /* font-size: 16px; */
     color: var(--rose800);
     font-weight: 600;
 }
 .preparation ul{
-    color: var(--stone600);
+    color: var(--textcolor);
+    font-weight: 400;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 .preparation li{
-    width: 12em;
     padding-left: 15px;
-    align-content: center;
 }
-.preparation span{
-    font-weight: 600;
-}
+
 .preparation li::marker{
     color: var(--rose800);
+}
+.info h2 {
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+    margin: 0;
+    color: var(--brown800);
+}
+.ingredients{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 1.3em;
+}
+.ingredients ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.ingredients li{
+    padding-left: 15px;
+    color: var(--textcolor);
+    font-weight: 400;
+}
+.ingredients li::marker{
+    color: var(--brown800);
+}
+.instructions{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 1.3em;
+}
+.instructions ol{
+    padding: 0.4em 0 0 1.5em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.instructions li{
+    padding: 0;
+    margin: 0;
+    padding-left: 15px;
+    color: var(--textcolor);
+    font-weight: 400;
+}
+.instructions li::marker{
+    color: var(--brown800);
+    font-weight: 600;
+}
+.nutrition{
+    color: var(--textcolor);
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding-bottom: 3em;
+}
+.nutrition table{
+    border-collapse: collapse;
+    text-align: left;
+    td{
+        width: 50%;
+        padding: 1em 0 1em 1em;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        color: var(--textcolor);
+        font-weight: 400;
+    }
+    .value{
+        padding-left: 0;
+        font-weight: 600;
+        color: var(--brown800);
+    }
+    tr:last-child td{
+        border: none;
+    }
+}
+
+@media (min-width: 1000px){
+    body{
+        justify-content: center;
+        align-items: center;
+    }
+    main{
+        width: 35em;
+        row-gap: 1em;
+        img{
+            margin-top: 1em;
+            height: 13em;
+            object-fit: cover;
+        }
+    }
+    main .info{
+        row-gap: 1em;
+    }
+    .info h1{
+        font-size: 1.7em;
+    }
+    .info .preparation{
+        padding: calc(1em + 2px);
+        h2{
+            font-size: 15px;
+        }
+        ul{
+            row-gap: 5px;
+        }
+    }
+    .info h2{
+        font-size: 1.4em;
+    }
+    .ingredients{
+        padding-bottom: 1em;
+        ul{
+            row-gap: 5px;
+        }
+    }
+    .instructions{
+        li{
+            font-size: 0.9em;
+        }
+    }
+    .nutrition{
+        row-gap: 10px;
+        p{
+            font-size: 0.8em;
+        }
+        table{
+            font-size: 0.9em;
+        }
+    }
+}
+@media (prefers-reduced-motion: reduce){
+    * {
+        transition: none;
+        animation: none;
+    }
 }
